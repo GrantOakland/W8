@@ -12,19 +12,21 @@
 <body>
 	<header class="center"><figure>
 		<img class="center" src="/imgs/w8png.png" width="25%" alt="Logo">
-		
 	</figure>
-	<div id="app">
+	<div>
 		Put a nice motto or inspiring quote here?
 	</div>
 	</header>
 	<hr>
 
-	<form class="center">
-		<label for="weight">Goal Weight:</label><br>
-		<input type="text" id="weight" name="weight"><br>
-		<label for="height">Height:</label><br>
-		<input type="text" id="height" name="height"><br>
+	<form id="height-form" action="javascript:;" class="center">
+		<label for="height-input">Height:</label><br>
+		<input type="number" id="height-input" name="height"><br>
+		<input type="submit" value="Submit">
+	</form>
+	<form id="goal-form" action="javascript:;" class="center">
+		<label for="goal-input">Goal Weight:</label><br>
+		<input type="number" id="goal-input" name="goal"><br>
 		<input type="submit" value="Submit">
 	</form>
 
