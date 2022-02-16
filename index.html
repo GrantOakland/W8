@@ -25,13 +25,14 @@
 		<main>
 			<form id="height-form" class="box">
 				<label for="height-input">Height:</label><br>
-				<input type="number" id="height-input" name="height"><br>
+				<input type="number" id="height-input" name="feet" required min="1" max="9" autofocus> ft,
+				<input type="number" name="inches" required min="0" max="11"> in<br>
 				<input type="submit" value="Submit">
 			</form>
 
 			<form id="goal-form" class="box">
-				<label for="goal-input">Goal Weight:</label><br>
-				<input type="number" id="goal-input" name="goal"><br>
+				<label for="goal-input">Goal Body Weight:</label><br>
+				<input type="number" id="goal-input" name="goal" required min="1" max="999"> lbs<br>
 				<input type="submit" value="Submit">
 			</form>
 

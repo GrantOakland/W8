@@ -17,7 +17,9 @@ updateHeightForm();
 heightForm.addEventListener('submit', event => {
 	event.preventDefault();
 
-	data.height = +heightForm.elements.height.value;
+	const feet = +heightForm.elements.feet.value;
+	const inches = +heightForm.elements.inches.value;
+	data.height = 12 * feet + inches;
 	save();
 
 	updateHeightForm();
