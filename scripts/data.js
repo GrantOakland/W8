@@ -23,7 +23,9 @@ export const save = () => {
 const resetDataOption = document.getElementById('reset-data-option');
 
 resetDataOption.addEventListener('click', () => {
-	data = {};
-	save();
-	location.reload();
+	if (confirm('Are you sure you want to reset all your data?\n\nThis cannot be undone.')) {
+		data = {};
+		save();
+		location.reload();
+	}
 });
