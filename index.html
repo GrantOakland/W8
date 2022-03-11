@@ -30,17 +30,23 @@
 				<input type="submit" value="Submit">
 			</form>
 
+			<form id="weight-form" class="box">
+				<h3>Current Body Weight</h3>
+				<input type="number" id="weight-input" name="weight" required min="1" max="999"> lbs
+				<input type="submit" value="Submit">
+			</form>
+
+			<div id="weight-box" class="box">
+				<h3>Current Body Weight</h3>
+				<p style="font-size: 300%;"><span id="weight-value">148</span> LBS</p>
+				<button id="update-weight-button">Update Current Weight</button>
+			</div>
+
 			<form id="goal-form" class="box">
 				<h3>Goal Body Weight</h3>
 				<input type="number" id="goal-input" name="goal" required min="1" max="999"> lbs
 				<input type="submit" value="Submit">
 			</form>
-
-			<div class="box">
-				<h3>Current Body Weight</h3>
-				<p style="font-size: 300%;"><span id="current-body-weight">148</span> LBS</p>
-				<button id="current-body-weight-button">Update Current Weight</button>
-			</div>
 
 			<div class="box" style="background-color: rgb(255, 196, 196);">
 				<h3>ADD BMI CALC HERE</h3>

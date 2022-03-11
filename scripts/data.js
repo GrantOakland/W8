@@ -4,6 +4,10 @@ export const load = () => {
 	try {
 		// data = JSON.parse(localStorage.data);
 	} catch {}
+
+	if (data.weights === undefined) {
+		data.weights = [];
+	}
 };
 
 load();
