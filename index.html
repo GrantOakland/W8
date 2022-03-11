@@ -16,7 +16,7 @@
 				<img id="logo" src="/images/logo.png" alt="Logo">
 			</figure>
 			<div>
-				Put a nice motto or inspiring quote here?
+				"Motivation is whats gets you started, habit is what keeps you going."
 			</div>
 		</header>
 
@@ -45,15 +45,30 @@
 			</div>
 
 			<div class="box">
-				<h2>ADD PROGRESS HERE</h2>
+				<!-- <h2>ADD PROGRESS HERE</h2>
+				<label for="goal_prog">Goal Progress</label>
+				<progress id="goal_prog" value="0.8">80%</progress> -->
+				<div class="progress">
+					<div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+				</div>
 			</div>
 			<div id="settings">
 		</main>
-
 		<hr>
 	</div>
+	<!-- </div class="menubtn">
 	<input type="image" name="imgbtn" id="settings" class="set"
-	src="/images/gear.png" alt="settings" width="20" height="20">
+	src="/images/gear.png" alt="settings" width="20" height="20"> -->
+
+	<div class="dropdown">
+		<div id="settings-options" class="dropdown-content">
+			<a id="edit-height-option" href="#">Edit Height</a>
+			<a id="reset-data-option" href="#">Reset Data</a>
+		</div>
+		<button class="dropbtn">
+			<img src="/images/gear.png" alt="settings" width="20" height="20">
+		</button>
+	</div>
 
 	<script type="module" src="/scripts/main.js"></script>
 </body>
