@@ -1,4 +1,5 @@
 import { data, save } from "/scripts/data.js";
+import { updateGoal } from "/scripts/goalBodyWeight.js";
 
 const weightForm = document.getElementById('weight-form');
 const weightBox = document.getElementById('weight-box');
@@ -39,6 +40,7 @@ const setCurrentBodyWeight = value => {
 
 	save();
 	updateWeight();
+	updateGoal();
 };
 
 weightForm.addEventListener('submit', event => {
