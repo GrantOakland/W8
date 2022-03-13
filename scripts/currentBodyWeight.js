@@ -1,5 +1,5 @@
-import { data, save } from "/scripts/data.js";
-import { updateGoal } from "/scripts/goalBodyWeight.js";
+import { data, save } from '/scripts/data.js';
+import { updateGoal } from '/scripts/goalBodyWeight.js';
 
 const weightForm = document.getElementById('weight-form');
 const weightBox = document.getElementById('weight-box');

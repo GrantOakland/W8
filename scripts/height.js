@@ -1,4 +1,4 @@
-import { data, save } from "/scripts/data.js";
+import { data, save } from '/scripts/data.js';
 
 const heightForm = document.getElementById('height-form');
 

@@ -1,4 +1,4 @@
-import { data, save } from "/scripts/data.js";
+import { data, save } from '/scripts/data.js';
 
 const goalForm = document.getElementById('goal-form');
 const goalProgressBox = document.getElementById('goal-progress-box');
