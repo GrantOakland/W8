@@ -1,31 +1,13 @@
-export let data = {};
+import UserData from "/scripts/classes/UserData.js";
 
-export const load = () => {
-	try {
-		data = JSON.parse(localStorage.data);
-	} catch {}
+const data = new UserData();
 
-	if (data.weights === undefined) {
-		data.weights = [];
-	} else {
-		for (const weight of data.weights) {
-			weight.date = new Date(weight.date);
-		}
-	}
-};
-
-load();
-
-export const save = () => {
-	localStorage.data = JSON.stringify(data);
-};
+export default data;
 
 const resetDataOption = document.getElementById('reset-data-option');
 
 resetDataOption.addEventListener('click', () => {
 	if (confirm('Are you sure you want to reset all your data?\n\nThis cannot be undone.')) {
-		data = {};
-		save();
-		location.reload();
+		data.reset();
 	}
 });

@@ -1,14 +1,17 @@
-import { data, save } from '/scripts/data.js';
+import data from '/scripts/data.js';
 
 const goalForm = document.getElementById('goal-form');
+const goal = document.getElementById('goal');
 const goalProgressBox = document.getElementById('goal-progress-box');
 const goalProgress = document.getElementById('goal-progress');
+const editGoalButton = document.getElementById('edit-goal-button');
 
 export const updateGoal = () => {
 	if (data.goal === undefined) {
 		goalForm.classList.remove('hidden');
 		goalProgressBox.classList.add('hidden');
 	} else {
+		goal.textContent = data.goal;
 		goalForm.classList.add('hidden');
 
 		if (data.weights.length === 0) {
@@ -16,15 +19,7 @@ export const updateGoal = () => {
 		} else {
 			goalProgressBox.classList.remove('hidden');
 
-			const firstWeight = data.weights[0].value;
-			const weight = data.weights[data.weights.length - 1].value;
-
-			const progress = Math.min(
-				1,
-				firstWeight < data.goal
-					? (weight - firstWeight) / (data.goal - firstWeight)
-					: (firstWeight - weight) / (firstWeight - data.goal)
-			);
+			const progress = data.getGoalProgress();
 			const progressPercentage = `${Math.floor(progress * 1000) / 10}%`;
 			goalProgress.textContent = progressPercentage;
 			goalProgress.style.width = progressPercentage;
@@ -36,8 +31,16 @@ updateGoal();
 goalForm.addEventListener('submit', event => {
 	event.preventDefault();
 
-	data.goal = +goalForm.elements.goal.value;
-	save();
+	data.setGoal(+goalForm.elements.goal.value);
+	data.save();
 
 	updateGoal();
+});
+
+editGoalButton.addEventListener('click', () => {
+	goalForm.classList.remove('hidden');
+	goalProgressBox.classList.add('hidden');
+
+	goalForm.elements.goal.value = data.goal;
+	goalForm.elements.goal.select();
 });

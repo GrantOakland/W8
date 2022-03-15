@@ -1,4 +1,4 @@
-import { data, save } from '/scripts/data.js';
+import data from '/scripts/data.js';
 import { updateGoal } from '/scripts/goalBodyWeight.js';
 
 const weightForm = document.getElementById('weight-form');
@@ -20,33 +20,14 @@ const updateWeight = () => {
 };
 updateWeight();
 
-const setCurrentBodyWeight = value => {
-	const lastWeight = data.weights[data.weights.length - 1];
-	const now = new Date();
-
-	if (
-		lastWeight
-		&& lastWeight.date.getDate() === now.getDate()
-		&& lastWeight.date.getMonth() === now.getMonth()
-		&& lastWeight.date.getFullYear() === now.getFullYear()
-	) {
-		lastWeight.value = value;
-	} else {
-		data.weights.push({
-			date: now,
-			value
-		});
-	}
-
-	save();
-	updateWeight();
-	updateGoal();
-};
-
 weightForm.addEventListener('submit', event => {
 	event.preventDefault();
 
-	setCurrentBodyWeight(+weightForm.elements.weight.value);
+	data.setCurrentWeight(+weightForm.elements.weight.value);
+
+	data.save();
+	updateWeight();
+	updateGoal();
 });
 
 updateWeightButton.addEventListener('click', () => {
