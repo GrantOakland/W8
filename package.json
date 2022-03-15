@@ -1,0 +1,14 @@
+{
+	"name": "w8",
+	"version": "1.0.0",
+	"scripts": {
+		"test": "jest"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/GrantOakland/W8.git"
+	},
+	"devDependencies": {
+		"jest": "^27.5.1"
+	}
+}
