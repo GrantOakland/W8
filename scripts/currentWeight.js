@@ -1,5 +1,6 @@
 import data from '/scripts/data.js';
 import { updateGoal } from '/scripts/goal.js';
+import { updateWeightGraph } from '/scripts/weightGraph.js';
 
 const weightForm = document.getElementById('weight-form');
 const weightBox = document.getElementById('weight-box');
@@ -19,6 +20,7 @@ export const updateWeight = () => {
 	}
 
 	updateGoal();
+	updateWeightGraph();
 };
 updateWeight();
 
