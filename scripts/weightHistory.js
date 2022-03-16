@@ -42,7 +42,7 @@ const updateWeightHistory = () => {
 		editButton.addEventListener('click', () => {
 			const value = +prompt(`Enter a new body weight for ${dateString}.`, weight.value);
 
-			if (Number.isNaN(value)) {
+			if (!value) {
 				return;
 			}
 
