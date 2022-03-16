@@ -1,12 +1,12 @@
 import data from '/scripts/data.js';
-import { updateGoal } from '/scripts/goalBodyWeight.js';
+import { updateGoal } from '/scripts/goal.js';
 
 const weightForm = document.getElementById('weight-form');
 const weightBox = document.getElementById('weight-box');
 const weightValue = document.getElementById('weight-value');
 const updateWeightButton = document.getElementById('update-weight-button');
 
-const updateWeight = () => {
+export const updateWeight = () => {
 	if (data.weights.length === 0) {
 		weightForm.classList.remove('hidden');
 		weightBox.classList.add('hidden');
@@ -17,6 +17,8 @@ const updateWeight = () => {
 		const lastWeight = data.weights[data.weights.length - 1];
 		weightValue.textContent = lastWeight.value;
 	}
+
+	updateGoal();
 };
 updateWeight();
 
@@ -27,7 +29,6 @@ weightForm.addEventListener('submit', event => {
 
 	data.save();
 	updateWeight();
-	updateGoal();
 });
 
 updateWeightButton.addEventListener('click', () => {

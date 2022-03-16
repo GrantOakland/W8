@@ -23,73 +23,55 @@
 		<hr>
 
 		<main>
-			<form id="height-form" class="box">
-				<h3>Height</h3>
-				<input type="number" id="height-input" name="feet" required min="1" max="9" autofocus> ft,
-				<input type="number" name="inches" required min="0" max="11"> in
-				<input type="submit" value="Submit">
-			</form>
+			<div id="default-view">
+				<form id="height-form" class="box">
+					<h3>Height</h3>
+					<input type="number" id="height-input" name="feet" required min="1" max="9" autofocus> ft,
+					<input type="number" name="inches" required min="0" max="11"> in
+					<input type="submit" value="Submit">
+				</form>
 
-			<form id="weight-form" class="box">
-				<h3>Current Body Weight</h3>
-				<input type="number" id="weight-input" name="weight" required min="1" max="999"> lbs
-				<input type="submit" value="Submit">
-			</form>
+				<form id="weight-form" class="box">
+					<h3>Current Body Weight</h3>
+					<input type="number" id="weight-input" name="weight" required min="1" max="999"> lbs
+					<input type="submit" value="Submit">
+				</form>
 
-			<div id="weight-box" class="box">
-				<h3>Current Body Weight</h3>
-				<p style="font-size: 300%;"><span id="weight-value">148</span> LBS</p>
-				<button id="update-weight-button">Update Current Weight</button>
-			</div>
-
-			<form id="goal-form" class="box">
-				<h3>Goal Body Weight</h3>
-				<input type="number" id="goal-input" name="goal" required min="1" max="999"> lbs
-				<input type="submit" value="Submit">
-			</form>
-
-			<div id="goal-progress-box" class="box">
-				<h3>Progress to Goal (<span id="goal"></span> lbs)</h3>
-
-				<div class="progress">
-					<div id="goal-progress" style="width: 25%;">25%</div>
+				<div id="weight-box" class="box">
+					<h3>Current Body Weight</h3>
+					<p style="font-size: 300%;"><span id="weight-value">148</span> LBS</p>
+					<button id="update-weight-button">Update Current Weight</button>
 				</div>
 
-				<br>
-				<button id="edit-goal-button">Edit Goal</button>
+				<form id="goal-form" class="box">
+					<h3>Goal Body Weight</h3>
+					<input type="number" id="goal-input" name="goal" required min="1" max="999"> lbs
+					<input type="submit" value="Submit">
+				</form>
+
+				<div id="goal-progress-box" class="box">
+					<h3>Progress to Goal (<span id="goal"></span> lbs)</h3>
+
+					<div class="progress">
+						<div id="goal-progress" style="width: 25%;">25%</div>
+					</div>
+
+					<br>
+					<button id="edit-goal-button">Edit Goal</button>
+				</div>
 			</div>
 
-			<table id="weight-history-box" class="box">
-				<tr>
-					<th>Body Weight</th>
-					<th>Date</th>
-					<th>Update Weight</th>
-				</tr>
-				<tr>
-					<td>175 lbs</td>
-					<td>2/13/2022</td>
-					<td>
-						<button>Edit</button>
-						<button>Delete</button>
-					</td>
-				</tr>
-				<tr>
-					<td>175 lbs</td>
-					<td>1/30/2022</td>
-					<td>
-						<button>Edit</button>
-						<button>Delete</button>
-					</td>
-				</tr>
-				<tr>
-					<td>145 lbs</td>
-					<td>3/13/2022</td>
-					<td>
-						<button>Edit</button>
-						<button>Delete</button>
-					</td>
-				</tr>
-			</table>
+			<div id="weight-history-view" class="hidden">
+				<p>
+					<button id="default-view-button">Go Back</button>
+				</p>
+
+				<table id="weight-history-box" class="box"></table>
+
+				<div id="empty-weight-history-box" class="box">
+					You have no recorded weight entries.
+				</div>
+			</div>
 		</main>
 		<hr>
 	</div>
@@ -98,7 +80,7 @@
 		<div id="settings-options" class="dropdown-content">
 			<a id="edit-height-option" href="#">Edit Height</a>
 			<a id="reset-data-option" href="#">Reset Data</a>
-			<a id="body-weight-history-option" href="#">Weight History</a>
+			<a id="weight-history-option" href="#">Weight History</a>
 		</div>
 		<button id="settings-button">
 			<img src="/images/gear.png" alt="settings" width="20" height="20">

@@ -26,7 +26,6 @@ export const updateGoal = () => {
 		}
 	}
 };
-updateGoal();
 
 goalForm.addEventListener('submit', event => {
 	event.preventDefault();
