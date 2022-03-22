@@ -1,14 +1,16 @@
 {
 	"name": "w8",
 	"version": "1.0.0",
+	"type": "module",
 	"scripts": {
-		"test": "jest"
+		"test": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/GrantOakland/W8.git"
 	},
 	"devDependencies": {
+		"cross-env": "^7.0.3",
 		"jest": "^27.5.1"
 	}
 }
