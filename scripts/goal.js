@@ -22,7 +22,14 @@ export const updateGoal = () => {
 			const progress = data.getGoalProgress();
 			const progressPercentage = `${Math.floor(progress * 1000) / 10}%`;
 			goalProgress.textContent = progressPercentage;
-			goalProgress.style.width = progressPercentage;
+
+			if (progress < 0) {
+				goalProgress.style.width = '0';
+				goalProgress.classList.add('negative');
+			} else {
+				goalProgress.style.width = progressPercentage;
+				goalProgress.classList.remove('negative');
+			}
 		}
 	}
 };

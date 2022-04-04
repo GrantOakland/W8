@@ -81,7 +81,7 @@ h3 {
 
 .dropdown:hover .dropdown-content {display: block;}
 
-.progress {
+#progress {
 	overflow: hidden;
 	border-radius: 5px;
 	background-color: lightgray;
@@ -93,6 +93,10 @@ h3 {
 	height: 100%;
 	background-color: rgb(50, 205, 50);
 	line-height: 25px;
+}
+
+#goal-progress.negative {
+	color: red;
 }
 
 table {
