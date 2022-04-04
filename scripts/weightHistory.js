@@ -77,7 +77,9 @@ const updateWeightHistory = () => {
 	emptyWeightHistoryBox.classList.add('hidden');
 };
 
-weightHistoryOption.addEventListener('click', () => {
+weightHistoryOption.addEventListener('click', event => {
+	event.preventDefault();
+
 	updateWeightHistory();
 
 	defaultView.classList.add('hidden');

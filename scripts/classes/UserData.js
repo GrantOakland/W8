@@ -31,6 +31,8 @@ export default class UserData {
 
 		this.setHeight(data.height);
 		this.setGoal(data.goal);
+
+		this.darkTheme = !!data.darkTheme;
 	}
 
 	save() {
@@ -41,7 +43,8 @@ export default class UserData {
 		return {
 			weights: this.weights,
 			height: this.height,
-			goal: this.goal
+			goal: this.goal,
+			darkTheme: this.darkTheme
 		};
 	}
 
