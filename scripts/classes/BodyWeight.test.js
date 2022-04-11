@@ -11,7 +11,7 @@ test('constructor', () => {
 	bodyWeight = new BodyWeight(bodyWeightData);
 
 	expect(+bodyWeight.date).toBe(bodyWeightData.date);
-	expect(bodyWeight.getValue()).toBe(bodyWeightData.getValue());
+	expect(bodyWeight.getValue()).toBe(bodyWeightData.value);
 });
 
 test('setDate', () => {

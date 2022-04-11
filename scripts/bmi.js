@@ -10,6 +10,8 @@ export const updateBMI = () => {
 	} else {
 		bmiBox.classList.remove('hidden');
 
-		bmiValue.textContent = new BMI(data.weights[data.weights.length - 1], data.height).getValue();
+		const bmi = new BMI();
+		bmi.setWeightAndHeight(data.weights[data.weights.length - 1], data.height);
+		bmiValue.textContent = bmi.calculate();
 	}
 };

@@ -1,9 +1,10 @@
 export default class BMI {
-	constructor(bodyWeight, height) {
-		this.value = Math.round(7030 * bodyWeight.getValue() / height.getValue() ** 2) / 10;
+	setWeightAndHeight(bodyWeight, height) {
+		this.weight = bodyWeight;
+		this.height = height;
 	}
 
-	getValue() {
-		return this.value;
+	calculate() {
+		return Math.round(7030 * this.weight.getValue() / this.height.getValue() ** 2) / 10;
 	}
 }
