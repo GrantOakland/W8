@@ -1,15 +1,18 @@
+import { updateBMI } from '/scripts/bmi.js';
 import data from '/scripts/data.js';
 
 const heightForm = document.getElementById('height-form');
 
-const updateHeightForm = () => {
+const updateHeight = () => {
 	if (data.height.value === undefined) {
 		heightForm.classList.remove('hidden');
 	} else {
 		heightForm.classList.add('hidden');
 	}
+
+	updateBMI();
 };
-updateHeightForm();
+updateHeight();
 
 heightForm.addEventListener('submit', event => {
 	event.preventDefault();
@@ -17,7 +20,7 @@ heightForm.addEventListener('submit', event => {
 	data.height.setFeetAndInches(+heightForm.elements.feet.value, +heightForm.elements.inches.value);
 	data.save();
 
-	updateHeightForm();
+	updateHeight();
 });
 
 const editHeightOption = document.getElementById('edit-height-option');

@@ -1,3 +1,4 @@
+import { updateBMI } from '/scripts/bmi.js';
 import data from '/scripts/data.js';
 import { updateGoal } from '/scripts/goal.js';
 import { updateWeightGraph } from '/scripts/weightGraph.js';
@@ -21,6 +22,7 @@ export const updateWeight = () => {
 
 	updateGoal();
 	updateWeightGraph();
+	updateBMI();
 };
 updateWeight();
 
