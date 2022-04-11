@@ -17,7 +17,7 @@ export const updateWeight = () => {
 		weightBox.classList.remove('hidden');
 
 		const lastWeight = data.weights[data.weights.length - 1];
-		weightValue.textContent = lastWeight.value;
+		weightValue.textContent = lastWeight.getValue();
 	}
 
 	updateGoal();
@@ -40,6 +40,6 @@ updateWeightButton.addEventListener('click', () => {
 	weightBox.classList.add('hidden');
 
 	const lastWeight = data.weights[data.weights.length - 1];
-	weightForm.elements.weight.value = lastWeight.value;
+	weightForm.elements.weight.value = lastWeight.getValue();
 	weightForm.elements.weight.select();
 });

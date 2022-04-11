@@ -7,7 +7,7 @@ test('constructor', () => {
 
 	height = new Height(heightValue);
 
-	expect(height.value).toBe(heightValue);
+	expect(height.getValue()).toBe(heightValue);
 });
 
 test('setValue', () => {
@@ -15,7 +15,7 @@ test('setValue', () => {
 
 	height.setValue(heightValue);
 
-	expect(height.value).toBe(heightValue);
+	expect(height.getValue()).toBe(heightValue);
 });
 
 const feet = 5;
@@ -24,7 +24,7 @@ const inches = 3;
 test('setFeetAndInches', () => {
 	height.setFeetAndInches(feet, inches);
 
-	expect(height.value).toBe(12 * feet + inches);
+	expect(height.getValue()).toBe(12 * feet + inches);
 });
 
 test('getFeet', () => {
@@ -36,5 +36,5 @@ test('getInches', () => {
 });
 
 test('toJSON', () => {
-	expect(height.toJSON()).toBe(height.value);
+	expect(height.toJSON()).toBe(height.getValue());
 });

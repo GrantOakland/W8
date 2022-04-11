@@ -12,7 +12,7 @@ export const updateWeightGraph = () => {
 			series: [{
 				points: data.weights.map(weight => ({
 					x: +weight.date,
-					y: weight.value
+					y: weight.getValue()
 				}))
 			}],
 			xAxis_scale_type: 'time'

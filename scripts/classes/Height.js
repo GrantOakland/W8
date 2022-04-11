@@ -7,27 +7,31 @@ export default class Height {
 		this.value = value;
 	}
 
+	getValue() {
+		return this.value;
+	}
+
 	setFeetAndInches(feet, inches) {
 		this.setValue(12 * feet + inches);
 	}
 
 	getFeet() {
-		if (this.value === undefined) {
+		if (this.getValue() === undefined) {
 			return undefined;
 		}
 
-		return Math.floor(this.value / 12);
+		return Math.floor(this.getValue() / 12);
 	}
 
 	getInches() {
-		if (this.value === undefined) {
+		if (this.getValue() === undefined) {
 			return undefined;
 		}
 
-		return this.value % 12;
+		return this.getValue() % 12;
 	}
 
 	toJSON() {
-		return this.value;
+		return this.getValue();
 	}
 }

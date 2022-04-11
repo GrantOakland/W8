@@ -11,7 +11,7 @@ test('constructor', () => {
 	bodyWeight = new BodyWeight(bodyWeightData);
 
 	expect(+bodyWeight.date).toBe(bodyWeightData.date);
-	expect(bodyWeight.value).toBe(bodyWeightData.value);
+	expect(bodyWeight.getValue()).toBe(bodyWeightData.getValue());
 });
 
 test('setDate', () => {
@@ -27,12 +27,12 @@ test('setValue', () => {
 
 	bodyWeight.setValue(bodyWeightValue);
 
-	expect(bodyWeight.value).toBe(bodyWeightValue);
+	expect(bodyWeight.getValue()).toBe(bodyWeightValue);
 });
 
 test('toJSON', () => {
 	expect(bodyWeight.toJSON()).toEqual({
 		date: +bodyWeight.date,
-		value: bodyWeight.value
+		value: bodyWeight.getValue()
 	});
 });

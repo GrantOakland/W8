@@ -73,19 +73,21 @@ export default class UserData {
 	}
 
 	getGoalProgress() {
-		const weight = this.weights[this.weights.length - 1].value;
+		const weight = this.weights[this.weights.length - 1].getValue();
 
 		if (this.goal === weight) {
 			return 1;
 		}
 
-		const firstWeight = this.weights[0].value;
+		const firstWeight = this.weights[0].getValue();
 
 		return Math.min(
 			1,
 			firstWeight < this.goal
 				? (weight - firstWeight) / (this.goal - firstWeight)
-				: (firstWeight - weight) / (firstWeight - this.goal)
+				: firstWeight > this.goal
+					? (firstWeight - weight) / (firstWeight - this.goal)
+					: 0
 		);
 	}
 }

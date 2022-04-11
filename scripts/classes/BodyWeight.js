@@ -12,10 +12,14 @@ export default class BodyWeight {
 		this.value = value;
 	}
 
+	getValue() {
+		return this.value;
+	}
+
 	toJSON() {
 		return {
 			date: +this.date,
-			value: this.value
+			value: this.getValue()
 		};
 	}
 }

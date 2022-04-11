@@ -5,11 +5,11 @@ const bmiBox = document.getElementById('bmi-box');
 const bmiValue = document.getElementById('bmi-value');
 
 export const updateBMI = () => {
-	if (data.weights.length === 0 || data.height.value === undefined) {
+	if (data.weights.length === 0 || data.height.getValue() === undefined) {
 		bmiBox.classList.add('hidden');
 	} else {
 		bmiBox.classList.remove('hidden');
 
-		bmiValue.textContent = BMI.calculate(data.height, data.weights[data.weights.length - 1]);
+		bmiValue.textContent = new BMI(data.weights[data.weights.length - 1], data.height).getValue();
 	}
 };

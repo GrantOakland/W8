@@ -28,7 +28,7 @@ const updateWeightHistory = () => {
 		const row = document.createElement('tr');
 
 		const valueCell = document.createElement('td');
-		valueCell.textContent = `${weight.value} lbs`;
+		valueCell.textContent = `${weight.getValue()} lbs`;
 		row.append(valueCell);
 
 		const dateCell = document.createElement('td');
@@ -40,7 +40,7 @@ const updateWeightHistory = () => {
 		const editButton = document.createElement('button');
 		editButton.textContent = 'Edit';
 		editButton.addEventListener('click', () => {
-			const value = +prompt(`Enter a new body weight for ${dateString}.`, weight.value);
+			const value = +prompt(`Enter a new body weight for ${dateString}.`, weight.getValue());
 
 			if (!value) {
 				return;
