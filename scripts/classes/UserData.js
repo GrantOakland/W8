@@ -16,6 +16,9 @@ export default class UserData {
 		this.height = new Height(value);
 	}
 
+	// Note for professor: Although this method doesn't actually have any parameters,
+	// we still modeled it as accepting a `data` parameter because that representation is useful for our design.
+	// In practice, the `data` parameter from our design would correspond to the `localStorage.data` value.
 	load() {
 		let data = {};
 
